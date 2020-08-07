@@ -70,9 +70,9 @@ import javax.validation.constraints.*;
         @ApiResponse(responseCode = "200", description = "Expected response to a valid request", content = @Content(schema = @Schema(implementation = Users.class))),
         
         @ApiResponse(responseCode = "200", description = "unexpected error", content = @Content(schema = @Schema(implementation = Error.class))) })
-    public Response showPetById(@Parameter(in = ParameterIn.PATH, description = "User to be retrieved..",required=true) @PathParam("userId") Integer userId
+    public User showPetById(@Parameter(in = ParameterIn.PATH, description = "User to be retrieved..",required=true) @PathParam("userId") Integer userId
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
-        return delegate.showPetById(userId,securityContext);
+        return delegate.getUser(userId,securityContext);
     }
 }

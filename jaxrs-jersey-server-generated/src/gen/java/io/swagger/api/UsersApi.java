@@ -28,6 +28,7 @@ import org.glassfish.jersey.media.multipart.FormDataParam;
 
 import javax.servlet.ServletConfig;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.ws.rs.*;
@@ -77,7 +78,7 @@ import javax.validation.constraints.*;
     @GET
     
     
-    @Produces({ "application/json", "application/xml" })
+    @Produces({ "application/json", MediaType.APPLICATION_XML })
     @Operation(summary = "List all Yanis users", description = "", tags={ "USERS" })
     @ApiResponses(value = { 
         @ApiResponse(responseCode = "200", description = "List of Users returned from yanis DB", content = @Content(schema = @Schema(implementation = Users.class))),

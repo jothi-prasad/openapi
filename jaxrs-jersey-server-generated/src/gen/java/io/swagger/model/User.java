@@ -13,6 +13,8 @@
 package io.swagger.model;
 
 import java.util.Objects;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -21,6 +23,7 @@ import javax.validation.constraints.*;
 /**
  * User
  */
+@javax.xml.bind.annotation.XmlRootElement
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaJerseyServerCodegen", date = "2020-08-06T23:24:24.936Z[GMT]")
 public class User   {
   @JsonProperty("userId")
@@ -30,9 +33,11 @@ public class User   {
   private String userName = null;
 
   @JsonProperty("userDescription")
+  @JsonIgnore(true)
   private String userDescription = null;
 
   @JsonProperty("system")
+  @JsonIgnore(true)
   private String system = null;
 
   public User userId(Long userId) {
