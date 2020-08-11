@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 info:
   version: 1.0.0
-  title: Yanis User API
+  title: User API
   license:
     name: MIT
 servers:
@@ -9,7 +9,7 @@ servers:
 paths:
   /users:
     get:
-      summary: List all Yanis users
+      summary: List all users
       operationId: listUsers
       tags:
         - USERS
@@ -23,7 +23,7 @@ paths:
             format: int32
       responses:
         '200':
-          description: List of Users returned from yanis DB
+          description: List of Users returned from DB
           headers:
             x-next:
               description: A link to the next page of responses
@@ -43,7 +43,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
     post:
-      summary: Create a new user in Yanis
+      summary: Create a new user
       operationId: create
       tags:
         - USERS
