@@ -84,7 +84,7 @@ import javax.validation.constraints.*;
         @ApiResponse(responseCode = "200", description = "List of Users returned from yanis DB", content = @Content(schema = @Schema(implementation = Users.class))),
         
         @ApiResponse(responseCode = "200", description = "unexpected error", content = @Content(schema = @Schema(implementation = Error.class))) })
-    public User listUsers(@Parameter(in = ParameterIn.QUERY, description = "How many users to fetch at single stretch (max 100)") @QueryParam("limit") Integer limit
+    public Response listUsers(@Parameter(in = ParameterIn.QUERY, description = "How many users to fetch at single stretch (max 100)") @QueryParam("limit") Integer limit
 ,@Context SecurityContext securityContext)
             throws ApiException {
         return delegate.listUsers(limit,securityContext);

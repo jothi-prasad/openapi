@@ -20,11 +20,13 @@ import javax.validation.constraints.*;
 @javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaJerseyServerCodegen", date = "2020-08-06T23:24:24.936Z[GMT]")
 public class UserApiServiceImpl extends UserApiService {
     @Override
-    public User getUser(Integer userId, SecurityContext securityContext) throws NotFoundException {
+    public Response getUser(Integer userId, SecurityContext securityContext) throws NotFoundException {
         // do some magic!
         User usr = new User();
         usr.setUserId(userId.longValue());
         //return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
-        return usr;
+        //return usr;
+        return Response.ok().entity(usr).build();
+        //return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, usr)).build();
     }
 }

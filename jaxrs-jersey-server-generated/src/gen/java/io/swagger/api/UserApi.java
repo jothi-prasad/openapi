@@ -2,7 +2,7 @@ package io.swagger.api;
 
 import io.swagger.model.*;
 import io.swagger.api.UserApiService;
-import io.swagger.api.factories.UserApiServiceFactory;
+import io.swagger.api.factories.*;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -70,7 +70,7 @@ import javax.validation.constraints.*;
         @ApiResponse(responseCode = "200", description = "Expected response to a valid request", content = @Content(schema = @Schema(implementation = Users.class))),
         
         @ApiResponse(responseCode = "200", description = "unexpected error", content = @Content(schema = @Schema(implementation = Error.class))) })
-    public User showPetById(@Parameter(in = ParameterIn.PATH, description = "User to be retrieved..",required=true) @PathParam("userId") Integer userId
+    public Response showPetById(@Parameter(in = ParameterIn.PATH, description = "User to be retrieved..",required=true) @PathParam("userId") Integer userId
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.getUser(userId,securityContext);

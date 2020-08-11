@@ -1,5 +1,6 @@
 package io.swagger.api;
 
+import javax.ws.rs.core.Response;
 import javax.xml.bind.annotation.XmlTransient;
 
 @javax.xml.bind.annotation.XmlRootElement
