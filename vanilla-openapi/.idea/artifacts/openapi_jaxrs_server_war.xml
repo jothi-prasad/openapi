@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="openapi-jaxrs-server:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>openapi-jaxrs-server</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="openapi-jaxrs-server-1.0.0.war">
+      <element id="artifact" artifact-name="openapi-jaxrs-server:war exploded" />
+    </root>
+  </artifact>
+</component>
